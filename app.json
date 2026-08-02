@@ -1,0 +1,1325 @@
+{
+  "id": "ai-rd-tax-credit-section-174a-workbench",
+  "title": "R&D Tax Evidence Workbench",
+  "tagline": "Section 41 credit substantiation and Section 174A expenditure governance",
+  "industry": "Tax Technology",
+  "port": 4516,
+  "accent": "#4f46e5",
+  "valueLabel": "Qualified spend reviewed",
+  "value": "$12.8M",
+  "workflows": [
+    {
+      "id": "project-qualify",
+      "title": "Research Project Qualification",
+      "description": "Apply the four-part test and document business component, uncertainty, process, and experimentation.",
+      "fields": [
+        {
+          "key": "project",
+          "label": "Research Project",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "businessComponent",
+          "label": "Business Component",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "technicalUncertainty",
+          "label": "Technical Uncertainty",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "key": "experimentation",
+          "label": "Experimentation Process",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "project": "Research Project STD-2026-104",
+            "businessComponent": "Business Component STD-2026-104",
+            "technicalUncertainty": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis.",
+            "experimentation": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "project": "Research Project RISK-2026-227",
+            "businessComponent": "Business Component RISK-2026-227",
+            "technicalUncertainty": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis.",
+            "experimentation": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "project": "Research Project EXC-2026-319",
+            "businessComponent": "Business Component EXC-2026-319",
+            "technicalUncertainty": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis.",
+            "experimentation": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "wage-allocation",
+      "title": "Qualified Wage Allocation",
+      "description": "Map employee time and activities to qualified research projects.",
+      "fields": [
+        {
+          "key": "employee",
+          "label": "Employee",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "project",
+          "label": "Project",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "qualifiedPercent",
+          "label": "Qualified Percentage",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "employee": "Employee STD-2026-104",
+            "role": "Role STD-2026-104",
+            "project": "Project STD-2026-104",
+            "qualifiedPercent": 88
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "employee": "Employee RISK-2026-227",
+            "role": "Role RISK-2026-227",
+            "project": "Project RISK-2026-227",
+            "qualifiedPercent": 42
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "employee": "Employee EXC-2026-319",
+            "role": "Role EXC-2026-319",
+            "project": "Project EXC-2026-319",
+            "qualifiedPercent": 67
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "contract-research",
+      "title": "Contract Research Review",
+      "description": "Evaluate contractor agreements, rights, funding risk, and eligible percentages.",
+      "fields": [
+        {
+          "key": "contractor",
+          "label": "Contractor",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "agreement",
+          "label": "Agreement Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "contractAmount",
+          "label": "Contract Amount",
+          "type": "currency",
+          "required": true
+        },
+        {
+          "key": "rightsAndRisk",
+          "label": "Rights and Risk Analysis",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "contractor": "H1234",
+            "agreement": "Agreement Reference STD-2026-104",
+            "contractAmount": 285000,
+            "rightsAndRisk": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "contractor": "H5678",
+            "agreement": "Agreement Reference RISK-2026-227",
+            "contractAmount": 875000,
+            "rightsAndRisk": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "contractor": "H9012",
+            "agreement": "Agreement Reference EXC-2026-319",
+            "contractAmount": 142500,
+            "rightsAndRisk": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "supply-cost",
+      "title": "Research Supply Classification",
+      "description": "Classify prototype, cloud, test, and experimental supply costs.",
+      "fields": [
+        {
+          "key": "vendor",
+          "label": "Vendor",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "costType",
+          "label": "Cost Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Prototype",
+            "Cloud compute",
+            "Testing",
+            "Materials"
+          ]
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "currency",
+          "required": true
+        },
+        {
+          "key": "researchUse",
+          "label": "Research Use",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "vendor": "Vendor STD-2026-104",
+            "costType": "Cloud compute",
+            "amount": 285000,
+            "researchUse": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "vendor": "Vendor RISK-2026-227",
+            "costType": "Cloud compute",
+            "amount": 875000,
+            "researchUse": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "vendor": "Vendor EXC-2026-319",
+            "costType": "Cloud compute",
+            "amount": 142500,
+            "researchUse": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "174a",
+      "title": "Section 174A Treatment",
+      "description": "Separate domestic and foreign research and document expense or capitalization elections.",
+      "fields": [
+        {
+          "key": "costCenter",
+          "label": "Cost Center",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "location",
+          "label": "Research Location",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "amount",
+          "label": "R&E Amount",
+          "type": "currency",
+          "required": true
+        },
+        {
+          "key": "treatment",
+          "label": "Tax Treatment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Current deduction",
+            "Capitalize 60+ months",
+            "Foreign 15-year amortization"
+          ]
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "costCenter": "Cost Center STD-2026-104",
+            "location": "Research Location STD-2026-104",
+            "amount": 285000,
+            "treatment": "Current deduction"
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "costCenter": "Cost Center RISK-2026-227",
+            "location": "Research Location RISK-2026-227",
+            "amount": 875000,
+            "treatment": "Current deduction"
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "costCenter": "Cost Center EXC-2026-319",
+            "location": "Research Location EXC-2026-319",
+            "amount": 142500,
+            "treatment": "Current deduction"
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": "Contemporaneous Evidence Binder",
+      "description": "Index source code, tickets, experiments, interviews, payroll, and accounting records.",
+      "fields": [
+        {
+          "key": "project",
+          "label": "Project",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "evidenceType",
+          "label": "Evidence Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Source control",
+            "Ticket",
+            "Experiment",
+            "Interview",
+            "Ledger"
+          ]
+        },
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "evidenceSummary",
+          "label": "Evidence Summary",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "project": "Project STD-2026-104",
+            "evidenceType": "Ticket",
+            "period": "Period STD-2026-104",
+            "evidenceSummary": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "project": "Project RISK-2026-227",
+            "evidenceType": "Ticket",
+            "period": "Period RISK-2026-227",
+            "evidenceSummary": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "project": "Project EXC-2026-319",
+            "evidenceType": "Ticket",
+            "period": "Period EXC-2026-319",
+            "evidenceSummary": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "credit-calc",
+      "title": "Credit Calculation Review",
+      "description": "Review QRE populations, base calculation, elections, and state adjustments.",
+      "fields": [
+        {
+          "key": "entity",
+          "label": "Tax Entity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "taxYear",
+          "label": "Tax Year",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "qreAmount",
+          "label": "QRE Amount",
+          "type": "currency",
+          "required": true
+        },
+        {
+          "key": "calculationMethod",
+          "label": "Method",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Regular credit",
+            "Alternative simplified credit"
+          ]
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "entity": "Tax Entity STD-2026-104",
+            "taxYear": 2025,
+            "qreAmount": 285000,
+            "calculationMethod": "Alternative simplified credit"
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "entity": "Tax Entity RISK-2026-227",
+            "taxYear": 2024,
+            "qreAmount": 875000,
+            "calculationMethod": "Alternative simplified credit"
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "entity": "Tax Entity EXC-2026-319",
+            "taxYear": 2023,
+            "qreAmount": 142500,
+            "calculationMethod": "Alternative simplified credit"
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "exam-ready",
+      "title": "Examination Readiness",
+      "description": "Assess nexus, methodology, evidence coverage, sampling, and response readiness.",
+      "fields": [
+        {
+          "key": "taxYear",
+          "label": "Tax Year",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "creditAmount",
+          "label": "Credit Amount",
+          "type": "currency",
+          "required": true
+        },
+        {
+          "key": "evidenceCoverage",
+          "label": "Evidence Coverage",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "readinessGap",
+          "label": "Readiness Gap",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "taxYear": 2025,
+            "creditAmount": 285000,
+            "evidenceCoverage": 125,
+            "readinessGap": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "taxYear": 2024,
+            "creditAmount": 875000,
+            "evidenceCoverage": 975,
+            "readinessGap": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "taxYear": 2023,
+            "creditAmount": 142500,
+            "evidenceCoverage": 41,
+            "readinessGap": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "project-qualify",
+      "title": "Research Project Qualification Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for research project qualification.",
+      "table": "op_project_qualify",
+      "columns": [
+        {
+          "key": "project",
+          "label": "Research Project",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_project"
+        },
+        {
+          "key": "businessComponent",
+          "label": "Business Component",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_businessComponent"
+        },
+        {
+          "key": "technicalUncertainty",
+          "label": "Technical Uncertainty",
+          "type": "textarea",
+          "required": true,
+          "dbKey": "data_technicalUncertainty"
+        },
+        {
+          "key": "experimentation",
+          "label": "Experimentation Process",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_experimentation"
+        }
+      ]
+    },
+    {
+      "id": "wage-allocation",
+      "title": "Qualified Wage Allocation Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for qualified wage allocation.",
+      "table": "op_wage_allocation",
+      "columns": [
+        {
+          "key": "employee",
+          "label": "Employee",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_employee"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_role"
+        },
+        {
+          "key": "project",
+          "label": "Project",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_project"
+        },
+        {
+          "key": "qualifiedPercent",
+          "label": "Qualified Percentage",
+          "type": "number",
+          "required": false,
+          "dbKey": "data_qualifiedPercent"
+        }
+      ]
+    },
+    {
+      "id": "contract-research",
+      "title": "Contract Research Review Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for contract research review.",
+      "table": "op_contract_research",
+      "columns": [
+        {
+          "key": "contractor",
+          "label": "Contractor",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_contractor"
+        },
+        {
+          "key": "agreement",
+          "label": "Agreement Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_agreement"
+        },
+        {
+          "key": "contractAmount",
+          "label": "Contract Amount",
+          "type": "currency",
+          "required": true,
+          "dbKey": "data_contractAmount"
+        },
+        {
+          "key": "rightsAndRisk",
+          "label": "Rights and Risk Analysis",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_rightsAndRisk"
+        }
+      ]
+    },
+    {
+      "id": "supply-cost",
+      "title": "Research Supply Classification Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for research supply classification.",
+      "table": "op_supply_cost",
+      "columns": [
+        {
+          "key": "vendor",
+          "label": "Vendor",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_vendor"
+        },
+        {
+          "key": "costType",
+          "label": "Cost Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Prototype",
+            "Cloud compute",
+            "Testing",
+            "Materials"
+          ],
+          "dbKey": "data_costType"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "currency",
+          "required": true,
+          "dbKey": "data_amount"
+        },
+        {
+          "key": "researchUse",
+          "label": "Research Use",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_researchUse"
+        }
+      ]
+    },
+    {
+      "id": "174a",
+      "title": "Section 174A Treatment Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for section 174a treatment.",
+      "table": "op_174a",
+      "columns": [
+        {
+          "key": "costCenter",
+          "label": "Cost Center",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_costCenter"
+        },
+        {
+          "key": "location",
+          "label": "Research Location",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_location"
+        },
+        {
+          "key": "amount",
+          "label": "R&E Amount",
+          "type": "currency",
+          "required": true,
+          "dbKey": "data_amount"
+        },
+        {
+          "key": "treatment",
+          "label": "Tax Treatment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Current deduction",
+            "Capitalize 60+ months",
+            "Foreign 15-year amortization"
+          ],
+          "dbKey": "data_treatment"
+        }
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": "Contemporaneous Evidence Binder Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for contemporaneous evidence binder.",
+      "table": "op_evidence",
+      "columns": [
+        {
+          "key": "project",
+          "label": "Project",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_project"
+        },
+        {
+          "key": "evidenceType",
+          "label": "Evidence Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Source control",
+            "Ticket",
+            "Experiment",
+            "Interview",
+            "Ledger"
+          ],
+          "dbKey": "data_evidenceType"
+        },
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_period"
+        },
+        {
+          "key": "evidenceSummary",
+          "label": "Evidence Summary",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceSummary"
+        }
+      ]
+    },
+    {
+      "id": "credit-calc",
+      "title": "Credit Calculation Review Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for credit calculation review.",
+      "table": "op_credit_calc",
+      "columns": [
+        {
+          "key": "entity",
+          "label": "Tax Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "taxYear",
+          "label": "Tax Year",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_taxYear"
+        },
+        {
+          "key": "qreAmount",
+          "label": "QRE Amount",
+          "type": "currency",
+          "required": true,
+          "dbKey": "data_qreAmount"
+        },
+        {
+          "key": "calculationMethod",
+          "label": "Method",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Regular credit",
+            "Alternative simplified credit"
+          ],
+          "dbKey": "data_calculationMethod"
+        }
+      ]
+    },
+    {
+      "id": "exam-ready",
+      "title": "Examination Readiness Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for examination readiness.",
+      "table": "op_exam_ready",
+      "columns": [
+        {
+          "key": "taxYear",
+          "label": "Tax Year",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_taxYear"
+        },
+        {
+          "key": "creditAmount",
+          "label": "Credit Amount",
+          "type": "currency",
+          "required": true,
+          "dbKey": "data_creditAmount"
+        },
+        {
+          "key": "evidenceCoverage",
+          "label": "Evidence Coverage",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_evidenceCoverage"
+        },
+        {
+          "key": "readinessGap",
+          "label": "Readiness Gap",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_readinessGap"
+        }
+      ]
+    },
+    {
+      "id": "tax-entities",
+      "title": "Tax Entity Registry",
+      "description": "Legal entities, jurisdictions, filing groups, and research locations.",
+      "table": "op_tax_entities",
+      "columns": [
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "ein",
+          "label": "EIN Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_ein"
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_jurisdiction"
+        },
+        {
+          "key": "filingGroup",
+          "label": "Filing Group",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_filingGroup"
+        }
+      ]
+    },
+    {
+      "id": "research-personnel",
+      "title": "Research Personnel Roster",
+      "description": "Employees, roles, departments, supervisors, and research allocations.",
+      "table": "op_research_personnel",
+      "columns": [
+        {
+          "key": "employee",
+          "label": "Employee",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_employee"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_role"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_department"
+        },
+        {
+          "key": "qualifiedPercent",
+          "label": "Qualified %",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_qualifiedPercent"
+        }
+      ]
+    },
+    {
+      "id": "business-components",
+      "title": "Business Component Registry",
+      "description": "Products, processes, software, uncertainties, and project ownership.",
+      "table": "op_business_components",
+      "columns": [
+        {
+          "key": "component",
+          "label": "Business Component",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_component"
+        },
+        {
+          "key": "componentType",
+          "label": "Component Type",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_componentType"
+        },
+        {
+          "key": "project",
+          "label": "Research Project",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_project"
+        },
+        {
+          "key": "owner",
+          "label": "Project Owner",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_owner"
+        }
+      ]
+    },
+    {
+      "id": "evidence-sources",
+      "title": "Research Evidence Source Catalog",
+      "description": "Repositories, systems, retention, access, and evidence coverage.",
+      "table": "op_evidence_sources",
+      "columns": [
+        {
+          "key": "source",
+          "label": "Evidence Source",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_source"
+        },
+        {
+          "key": "system",
+          "label": "System",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_system"
+        },
+        {
+          "key": "retentionYears",
+          "label": "Retention Years",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_retentionYears"
+        },
+        {
+          "key": "coverageNotes",
+          "label": "Coverage Notes",
+          "type": "textarea",
+          "required": true,
+          "dbKey": "data_coverageNotes"
+        }
+      ]
+    }
+  ],
+  "domainProduct": {
+    "home": "R&D Tax Evidence Workbench",
+    "context": "Four-part-test qualification, wage and contractor allocation, Section 174 capitalization, credit computation, and evidence nexus.",
+    "features": [
+      {
+        "id": "four-part-test",
+        "title": "Four-Part Test Qualification",
+        "description": "Document permitted purpose, technological uncertainty, experimentation process, and technological foundation by business component.",
+        "view": "evidence",
+        "modules": [
+          "project-qualify",
+          "business-components"
+        ],
+        "actions": [
+          {
+            "id": "qualify-component",
+            "label": "Qualify Business Component",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved four-part-test qualification with contemporaneous evidence."
+          },
+          {
+            "id": "reject-component",
+            "label": "Reject Unsupported Component",
+            "nextStatus": "Closed",
+            "auditDetail": "Rejected a component lacking required research evidence."
+          }
+        ]
+      },
+      {
+        "id": "wage-allocation",
+        "title": "Research Wage Allocation",
+        "description": "Reconcile payroll, role, project time, supervision, direct support, and qualified-service percentages.",
+        "view": "reconciliation",
+        "modules": [
+          "wage-allocation",
+          "research-personnel"
+        ],
+        "actions": [
+          {
+            "id": "approve-wages",
+            "label": "Approve Qualified Wages",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved employee research allocation and qualified wage amount."
+          },
+          {
+            "id": "request-timeproof",
+            "label": "Request Time Evidence",
+            "nextStatus": "Investigating",
+            "auditDetail": "Requested additional time-allocation evidence."
+          }
+        ]
+      },
+      {
+        "id": "section-174",
+        "title": "Section 174 Capitalization",
+        "description": "Classify domestic and foreign SRE costs, placed-in-service periods, method changes, and amortization schedules.",
+        "view": "reconciliation",
+        "modules": [
+          "174a",
+          "tax-entities"
+        ],
+        "actions": [
+          {
+            "id": "approve-capitalization",
+            "label": "Approve SRE Capitalization",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved Section 174 cost pool and amortization treatment."
+          },
+          {
+            "id": "reclassify-cost",
+            "label": "Reclassify Non-SRE Cost",
+            "nextStatus": "Review",
+            "auditDetail": "Removed an unsupported cost from the SRE pool."
+          }
+        ]
+      },
+      {
+        "id": "credit-computation",
+        "title": "Federal & State Credit Computation",
+        "description": "Calculate QREs, base amount, ASC or regular credit, controlled group allocation, and state modifications.",
+        "view": "control",
+        "modules": [
+          "credit-calc",
+          "tax-entities"
+        ],
+        "actions": [
+          {
+            "id": "approve-credit",
+            "label": "Approve Credit Computation",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved federal and state research credit computation."
+          },
+          {
+            "id": "hold-computation",
+            "label": "Hold for Tax Review",
+            "nextStatus": "Review",
+            "auditDetail": "Held computation for tax technical review."
+          }
+        ]
+      },
+      {
+        "id": "evidence-nexus",
+        "title": "Project-to-Evidence Nexus",
+        "description": "Link source control, tickets, test results, design records, payroll, and interviews to each qualified business component.",
+        "view": "evidence",
+        "modules": [
+          "evidence",
+          "evidence-sources"
+        ],
+        "actions": [
+          {
+            "id": "seal-evidence",
+            "label": "Seal Evidence Package",
+            "nextStatus": "Approved",
+            "auditDetail": "Sealed project evidence with source lineage and reviewer approval."
+          },
+          {
+            "id": "open-evidence-gap",
+            "label": "Open Evidence Gap",
+            "nextStatus": "Investigating",
+            "auditDetail": "Opened a missing nexus or contemporaneous-evidence issue."
+          }
+        ]
+      }
+    ]
+  },
+  "integrations": [
+    {
+      "id": "integration-1",
+      "name": "General ledger",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-2",
+      "name": "Payroll system",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-3",
+      "name": "Source control",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-4",
+      "name": "Project tracker",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-5",
+      "name": "Contract repository",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    }
+  ],
+  "featureCount": 40,
+  "seededRecords": 300,
+  "demoUsers": 3,
+  "apiPort": 5516,
+  "dbName": "profit_ai_rd_tax_credit_section_174a_workbench"
+}
