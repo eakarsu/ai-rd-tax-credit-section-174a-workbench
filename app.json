@@ -7,6 +7,15 @@
   "accent": "#4f46e5",
   "valueLabel": "Qualified spend reviewed",
   "value": "$12.8M",
+  "commercialExtension": {
+    "title": "R&D Evidence & Tax Value Lab",
+    "summary": "Estimate substantiated research value and stage payroll, ledger, project, source-control, and tax-workpaper evidence.",
+    "baselineLabel": "Annual technical payroll", "volumeLabel": "Technical employees", "unitValueLabel": "Average loaded payroll", "opportunityRateLabel": "Qualified research share", "captureRateLabel": "Substantiated share",
+    "defaults": { "volume": 160, "unitValue": 145000, "opportunityRate": 38, "captureRate": 85 },
+    "pricing": "Entity subscription for evidence governance plus CPA-reviewed engagement or credit-volume tiers.",
+    "milestones": ["Connect payroll, GL, and project ledgers", "Map projects to the four-part test", "Corroborate experimentation with Git and Jira evidence", "Release reviewer-approved credit and Section 174A workpapers"],
+    "connectors": [{"name":"Payroll and GL","status":"Pilot","purpose":"Wages, supplies, contractors, and ledger tie-out","evidence":"Employee, cost center, account, period, and reconciliation totals"},{"name":"Git and Jira","status":"Planned","purpose":"Technical uncertainty and experimentation corroboration","evidence":"Immutable references without treating activity as automatic qualification"},{"name":"Tax workpaper system","status":"Planned","purpose":"Credit and expenditure schedules","evidence":"Versioned calculations, reviewer sign-off, and return references"}]
+  },
   "workflows": [
     {
       "id": "project-qualify",
